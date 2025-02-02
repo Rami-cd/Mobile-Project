@@ -11,4 +11,11 @@
         android:layout_height="match_parent"
         android:text="Hello profile fragment" />
 
+    <Button
+        android:id="@+id/logout_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/logout" />
+
+
 </FrameLayout>
