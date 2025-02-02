@@ -24,5 +24,9 @@
         <item name="android:background">@drawable/search_box_border</item> <!-- Border for the search box -->
     </style>
 
+    <style name="ButtonSignUpStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:textColor">@color/brand_color</item> <!-- Ensure text is visible -->
+        <item name="android:backgroundTint">@color/white</item> <!-- Set background -->
+    </style>
 
 </resources>

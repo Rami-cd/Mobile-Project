@@ -11,4 +11,12 @@
     <string name="location">Location</string>
     <string name="setting">Setting</string>
     <string name="none">none</string>
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="login">login</string>
+    <string name="no_account_note">"don't have an account ? "</string>
+    <string name="sign_up">signUp</string>
+    <string name="remember_me">remember me</string>
+    <string name="username">username</string>
+    <string name="logout">logout</string>
 </resources>
