@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.MobileProject" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+
+<!--    the default style with action bar is removed-->
+    <style name="Theme.MobileProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/brand_color</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -13,4 +15,14 @@
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+    <!-- styles.xml -->
+
+    <!-- Customize SearchView Style -->
+    <style name="CustomSearchView" parent="Widget.AppCompat.SearchView">
+        <item name="android:queryHint">Search here...</item> <!-- Placeholder text -->
+        <item name="android:iconifiedByDefault">false</item> <!-- Make search always expanded -->
+        <item name="android:background">@drawable/search_box_border</item> <!-- Border for the search box -->
+    </style>
+
+
 </resources>

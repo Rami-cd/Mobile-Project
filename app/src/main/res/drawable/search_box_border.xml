@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- res/drawable/search_box_border.xml -->
+    <shape>
+        <solid android:color="#FFFFFF" /> <!-- Background color of the search box -->
+        <stroke android:color="#3F51B5" android:width="2dp" /> <!-- Border color and width -->
+        <corners android:radius="8dp" /> <!-- Rounded corners -->
+    </shape>
+</selector>
