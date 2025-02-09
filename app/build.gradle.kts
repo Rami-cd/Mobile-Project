@@ -49,4 +49,8 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
     implementation ("com.android.volley:volley:1.2.1")
     implementation ("com.auth0.android:jwtdecode:2.0.0")
+    implementation ("androidx.viewpager2:viewpager2:1.0.0")
+    implementation ("com.google.android.material:material:1.4.0")
+    implementation ("com.tbuonomo:dotsindicator:4.2")
+    implementation ("com.google.android.material:material:1.6.0")
 }

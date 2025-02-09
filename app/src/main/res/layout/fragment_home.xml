@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    android:orientation="vertical">
 
+    <!-- Text view to display title or text at the top -->
     <TextView
         android:id="@+id/text_home"
         android:layout_width="match_parent"
@@ -14,9 +16,40 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:textSize="20sp" />
+
+    <!-- FrameLayout to hold ViewPager2 and TabLayout for the image carousel -->
+    <FrameLayout
+        android:layout_width="300dp"
+        android:layout_height="250dp"
+        android:layout_gravity="center">
+
+        <!-- ViewPager2 for image carousel -->
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal" />
+
+        <!-- TabLayout for pagination dots -->
+        <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+            android:id="@+id/dotsIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:dotsColor="@android:color/white"
+            app:dotsSize="12dp"
+            app:dotsSpacing="8dp"
+            app:selectedDotColor="@color/brand_color"
+            android:layout_gravity="center|bottom"
+            android:paddingTop="8dp"
+            android:layout_marginBottom="8dp" />
+
+    </FrameLayout>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </TableRow>
+
+</TableLayout>

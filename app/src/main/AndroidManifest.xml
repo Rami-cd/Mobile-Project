@@ -18,23 +18,32 @@
         <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-        <!-- SplashActivity is the launcher activity -->
+
+        <!-- MainActivity is now the launcher activity -->
         <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- SplashActivity is no longer needed for now, you can comment it out -->
+        <!-- <activity
             android:name=".SplashActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- LoginActivity is used for login -->
+        </activity> -->
+
         <activity
             android:name=".LoginActivity"
-            android:exported="false" /> <!-- Add MainActivity declaration -->
-        <activity
-            android:name=".MainActivity"
             android:exported="false" />
+
     </application>
 
 </manifest>
