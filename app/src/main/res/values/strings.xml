@@ -19,4 +19,6 @@
     <string name="remember_me">remember me</string>
     <string name="username">username</string>
     <string name="logout">logout</string>
+    <string name="shop_image">shop image</string>
+    <string name="holder_1">i don\'t know yet</string>
 </resources>
