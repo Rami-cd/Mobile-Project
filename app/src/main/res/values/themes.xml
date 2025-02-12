@@ -4,8 +4,8 @@
 <!--    the default style with action bar is removed-->
     <style name="Theme.MobileProject" parent="Theme.MaterialComponents.DayNight.NoActionBar">
     <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/brand_color</item>
-        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorPrimary">@color/colorPrimaryVariant</item>
+        <item name="colorPrimaryVariant">@color/brand_color</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -27,6 +27,11 @@
     <style name="ButtonSignUpStyle" parent="Widget.AppCompat.Button.Colored">
         <item name="android:textColor">@color/brand_color</item> <!-- Ensure text is visible -->
         <item name="android:backgroundTint">@color/white</item> <!-- Set background -->
+    </style>
+
+    <style name="RoundedImageStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
     </style>
 
 </resources>

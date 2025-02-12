@@ -9,7 +9,17 @@
         android:id="@+id/navigation_home"
         android:name="com.example.mobileproject.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_HomeFragment_to_ProductsFragment"
+            app:destination="@id/navigation_products" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_products"
+        android:name="com.example.mobileproject.ShopProductsFragment"
+        android:label="Products"
+        tools:layout="@layout/fragment_shop_products"/>
 
     <fragment
         android:id="@+id/navigation_cart"
