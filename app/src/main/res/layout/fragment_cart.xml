@@ -1,22 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.dashboard.CartFragment">
+    android:orientation="vertical"
+    android:background="@color/screen_background"
+    tools:context=".ui.cart.CartFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    <!-- Image -->
+    <ImageView
+        android:id="@+id/imgcart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        android:scaleType="centerCrop"
+        android:contentDescription="Product image"
+        android:background="@color/white"
+        android:src="@drawable/img_2" />
+
+    <!-- Total Price -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:id="@+id/g_totalprice"
+        android:text="Total Price .......$"
+        android:textColor="@color/white"
+        android:background="@color/price_background"
+        android:elevation="4dp"
+        android:padding="10dp"
+        android:textSize="26sp"
+        android:gravity="center" />
+
+    <!-- RecyclerView (Take remaining space) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cart_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/screen_background"
+        android:paddingTop="16dp" />
+
+    <!-- Buy Button (Stick to bottom) -->
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/buy_color"
+        android:gravity="center"
+        android:text="BUY NOW"
+
+        android:textSize="27sp"
+        app:cornerRadius="25dp"
+        app:rippleColor="@color/green_700"
+        app:strokeColor="@color/green_700"
+        app:strokeWidth="2dp" />
+
+</LinearLayout>

@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="brand_color">#059b35</color>
     <color name="colorPrimaryVariant">#6dbe45</color>
+    <color name="slightly_black">#000000E0</color>
+    <color name="buy_color">#5ae306</color>
+    <color name="green_500">#FF4CAF50</color>
+    <color name="green_700">#FF388E3C</color>
+    <color name="screen_background">#FFBBE56B</color>
+    <color name="price_background">#FF7EE51D</color>
+    <color name="card_stroke">#22000000</color>
 </resources>
