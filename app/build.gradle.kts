@@ -17,7 +17,7 @@ android {
 
         android.buildFeatures.buildConfig = true
 
-        buildConfigField("String", "SERVER_IP", "\"192.168.0.102\"");
+        buildConfigField("String", "SERVER_IP", "\"192.168.0.106\"");
 
     }
 
@@ -49,17 +49,26 @@ dependencies {
     implementation(libs.navigation.fragment)
     implementation(libs.navigation.ui)
     implementation(libs.activity)
+    implementation(libs.room.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation ("com.android.volley:volley:1.2.1")
-    implementation ("com.auth0.android:jwtdecode:2.0.0")
-    implementation ("androidx.viewpager2:viewpager2:1.0.0")
-    implementation ("com.google.android.material:material:1.4.0")
-    implementation ("com.tbuonomo:dotsindicator:4.2")
-    implementation ("com.google.android.material:material:1.6.0")
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
-    implementation ("com.airbnb.android:lottie:6.0.0")
-    implementation("androidx.cardview:cardview:1.0.0")
+    implementation (libs.volley)
+    implementation (libs.jwtdecode)
+    implementation (libs.viewpager2)
+    implementation (libs.material.v140)
+    implementation (libs.dotsindicator)
+    implementation (libs.material.v160)
+    implementation (libs.glide)
+    annotationProcessor (libs.compiler)
+    implementation (libs.lottie)
+    implementation(libs.cardview)
+    val room_version = "2.6.1"
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    implementation("androidx.room:room-rxjava2:$room_version")
+    implementation("androidx.room:room-rxjava3:$room_version")
+    implementation("androidx.room:room-guava:$room_version")
+    testImplementation("androidx.room:room-testing:$room_version")
 }
