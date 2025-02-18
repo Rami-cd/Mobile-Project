@@ -17,7 +17,7 @@ android {
 
         android.buildFeatures.buildConfig = true
 
-        buildConfigField("String", "SERVER_IP", "\"192.168.0.106\"");
+        buildConfigField("String", "SERVER_IP", "\"192.168.10.162\"");
 
     }
 

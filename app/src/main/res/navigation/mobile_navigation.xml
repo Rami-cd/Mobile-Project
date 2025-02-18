@@ -29,13 +29,23 @@
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.example.mobileproject.ui.notifications.SearchFragment"
+        android:name="com.example.mobileproject.ui.search.SearchFragment"
         android:label="@string/title_notifications"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_SearchFragment_to_CategoryFragment"
+            app:destination="@id/navigation_category" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.mobileproject.ui.Profile.Profile"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/navigation_category"
+        android:name="com.example.mobileproject.CategoryFragment"
+        android:label="Category"
+        tools:layout="@layout/fragment_category" />
 </navigation>
