@@ -1,4 +1,4 @@
-package com.example.mobileproject.ui.notifications;
+package com.example.mobileproject.ui.search;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

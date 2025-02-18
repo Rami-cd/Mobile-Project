@@ -1,22 +1,351 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.notifications.SearchFragment">
+    android:contentDescription="Scroll through search results"
+    tools:context=".ui.search.SearchFragment">
 
-    <TextView
-        android:id="@+id/text_notifications"
+<!--    <LinearLayout-->
+<!--        android:id="@+id/text_notifications"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:orientation="vertical">-->
+
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="?actionBarSize"/>-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="@string/search_tv"-->
+<!--            android:textSize="30sp"-->
+<!--            android:textAllCaps="true"-->
+<!--            android:padding="10dp"/>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="190dp">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:background="@drawable/cartbackg"-->
+<!--                android:layout_margin="15dp">-->
+
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Shop1"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:textSize="30sp"-->
+<!--                    android:padding="25dp"/>-->
+
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="more..."-->
+<!--                    android:background="#00000000"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:padding="20dp"-->
+<!--                    android:layout_alignParentBottom="true"/>-->
+
+<!--            </RelativeLayout>-->
+<!--            <ImageView-->
+<!--                android:layout_width="150dp"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:src="@drawable/foodicon4"-->
+<!--                android:layout_marginTop="0dp"-->
+<!--                android:layout_marginRight="15dp"-->
+<!--                android:layout_alignParentRight="true"/>-->
+
+<!--        </RelativeLayout>-->
+
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/cartbackg">-->
+
+
+<!--            <ImageView-->
+<!--                android:layout_width="120dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:src="@drawable/bread"-->
+<!--                android:layout_marginLeft="220dp"/>-->
+
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop2"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="30sp"-->
+<!--                android:padding="35dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="190dp">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:background="@drawable/grocery5"-->
+<!--                android:layout_margin="15dp">-->
+
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Shop3"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="30sp"-->
+<!--                    android:padding="25dp"/>-->
+
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="more..."-->
+<!--                    android:background="#00000000"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:padding="20dp"-->
+<!--                    android:layout_alignParentBottom="true"/>-->
+
+<!--            </RelativeLayout>-->
+
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/grocery4">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop4"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="30sp"-->
+<!--                android:padding="5dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="190dp">-->
+
+<!--            <RelativeLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="150dp"-->
+<!--                android:background="@drawable/grocery6"-->
+<!--                android:layout_margin="15dp">-->
+
+
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Shop5"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    android:textSize="30sp"-->
+<!--                    android:padding="25dp"/>-->
+
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="more..."-->
+<!--                    android:background="#00000000"-->
+<!--                    android:textColor="@color/black"-->
+<!--                    android:padding="20dp"-->
+<!--                    android:layout_alignParentBottom="true"/>-->
+
+<!--            </RelativeLayout>-->
+
+
+<!--        </RelativeLayout>-->
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/grocery7">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop6"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="30sp"-->
+<!--                android:padding="5dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/grocery8">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop7"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="30sp"-->
+<!--                android:layout_marginLeft="250dp"-->
+<!--                android:padding="5dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/grocery9">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop8"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="30sp"-->
+<!--                android:layout_marginLeft="250dp"-->
+<!--                android:padding="5dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/grocery10">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop9"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="30sp"-->
+<!--                android:padding="5dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/grocery11">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop10"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="30sp"-->
+<!--                android:layout_marginLeft="250dp"-->
+<!--                android:padding="5dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>-->
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="150dp"-->
+<!--            android:layout_margin="15dp"-->
+<!--            android:background="@drawable/grocery12">-->
+
+
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Shop11"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="30sp"-->
+<!--                android:layout_marginLeft="250dp"-->
+<!--                android:padding="5dp"/>-->
+
+<!--            <Button-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="more..."-->
+<!--                android:background="#00000000"-->
+<!--                android:padding="20dp"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:layout_alignParentBottom="true"/>-->
+<!--        </RelativeLayout>
+
+    </LinearLayout>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/category_recycler"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_height="match_parent" />
+
+</LinearLayout>
