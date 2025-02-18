@@ -16,4 +16,5 @@
     <color name="screen_background">#FFBBE56B</color>
     <color name="price_background">#FF7EE51D</color>
     <color name="card_stroke">#22000000</color>
+    <color name="light_gray">#92989D</color>
 </resources>
