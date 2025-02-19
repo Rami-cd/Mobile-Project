@@ -31,7 +31,7 @@ public class Profile extends Fragment {
 
     ImageView profileImage;
     TextView profileName, profileEmail;
-    Button editProfileButton, myCartButton, logoutButton;
+    Button editProfileButton, logoutButton;
 
     @Nullable
     @Override

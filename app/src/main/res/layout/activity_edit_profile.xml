@@ -10,12 +10,14 @@
         android:id="@+id/edit_profile_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/green_500"
         android:hint="Enter your name"
         android:background="@drawable/rounded_input"
         android:padding="12dp"/>
 
     <EditText
         android:id="@+id/edit_profile_email"
+        android:textColor="@color/green_500"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Enter your email"
