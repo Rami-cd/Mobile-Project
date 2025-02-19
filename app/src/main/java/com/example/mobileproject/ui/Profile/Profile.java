@@ -43,7 +43,7 @@ public class Profile extends Fragment {
         profileName = binding_to_fragment.profileName;
         profileEmail = binding_to_fragment.profileEmail;
         editProfileButton = binding_to_fragment.btnEditProfile;
-        myCartButton = binding_to_fragment.btnMyCart;
+
         logoutButton = binding_to_fragment.btnLogout;
 
         // Initialize SharedPreferences
@@ -55,13 +55,7 @@ public class Profile extends Fragment {
             startActivity(intent);
         });
 
-        myCartButton.setOnClickListener(v -> {
-            Fragment cartFragment = new CartFragment();
-            FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.container, cartFragment);
-            transaction.addToBackStack(null); // Allows the user to go back
-            transaction.commit();
-        });
+
 
 
         logoutButton.setOnClickListener(v -> showLogoutConfirmationDialog());
