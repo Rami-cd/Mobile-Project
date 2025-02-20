@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.mobileproject.R;
 
@@ -27,10 +28,9 @@ public class EditProfileActivity extends AppCompatActivity {
         editEmail = findViewById(R.id.edit_profile_email);
         saveButton = findViewById(R.id.btn_save_profile);
 
-        // Initialize SharedPreferences
+        // Initialize Shared Preferences
         sharedPreferences = getSharedPreferences("credentials", Context.MODE_PRIVATE);
 
-        // Load saved user data
         loadUserData();
 
         saveButton.setOnClickListener(v -> saveProfileChanges());
@@ -48,12 +48,36 @@ public class EditProfileActivity extends AppCompatActivity {
         String newName = editName.getText().toString().trim();
         String newEmail = editEmail.getText().toString().trim();
 
+
+        if (newName.isEmpty()) {
+            editName.setError("Name cannot be empty!");
+            editName.requestFocus();
+            return;
+        }
+
+        if (newEmail.isEmpty()) {
+            editEmail.setError("Email cannot be empty!");
+            editEmail.requestFocus();
+            return;
+        }
+
+        
+        if (!android.util.Patterns.EMAIL_ADDRESS.matcher(newEmail).matches()) {
+            editEmail.setError("Enter a valid email!");
+            editEmail.requestFocus();
+            return;
+        }
+
         // Save data to SharedPreferences
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("name", newName);
         editor.putString("email", newEmail);
         editor.apply();
 
+        
+        Toast.makeText(this, "Profile updated successfully!", Toast.LENGTH_SHORT).show();
+
+        
         finish();
     }
 }
