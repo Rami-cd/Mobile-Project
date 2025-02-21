@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.mobileproject.datacart.Cart;
 import com.example.mobileproject.ui.cart.CartFragment;
+import com.example.mobileproject.ui.search.CategoriesCustomAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,7 +26,7 @@ import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class CategoryItemsCustomAdapter extends RecyclerView.Adapter<ShopProductsCustomAdapter.ViewHolder>{
+public class CategoryItemsCustomAdapter extends RecyclerView.Adapter<CategoryItemsCustomAdapter.ViewHolder>{
     JSONArray data;
     private static Context context = null;
     String serverIp = BuildConfig.SERVER_IP;
@@ -37,14 +38,14 @@ public class CategoryItemsCustomAdapter extends RecyclerView.Adapter<ShopProduct
 
     @NonNull
     @Override
-    public ShopProductsCustomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CategoryItemsCustomAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.product_row, parent, false);
-        return new ShopProductsCustomAdapter.ViewHolder(view);
+        return new CategoryItemsCustomAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ShopProductsCustomAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CategoryItemsCustomAdapter.ViewHolder holder, int position) {
         try {
             JSONObject obj = data.getJSONObject(position);
             Log.i("obj", String.valueOf(obj));
@@ -85,13 +86,12 @@ public class CategoryItemsCustomAdapter extends RecyclerView.Adapter<ShopProduct
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(v.getContext(), productName.getText().toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(v.getContext(), productName.getText().toString(), Toast.LENGTH_SHORT).show();
                     try {
                         int product_id = productData.getInt("product_id");
-                        int category_id = productData.getInt("category_id");
                         int shop_id = productData.getInt("shop_id");
                         String image_url = productData.getString("image_url");
-                        String name = productData.getString("name");
+                        String name = productData.getString("product_name");
                         double price = productData.getDouble("price");
                         String description = productData.getString("description");
                         int quantity = productData.getInt("quantity_in_stock");
@@ -99,7 +99,7 @@ public class CategoryItemsCustomAdapter extends RecyclerView.Adapter<ShopProduct
                         Cart cart_item = new Cart();
                         cart_item.name = name;
                         cart_item.product_id = product_id;
-                        cart_item.category_id = category_id;
+                        Log.i("shop_id", shop_id+"");
                         cart_item.shop_id = shop_id;
                         cart_item.price = price;
                         cart_item.description = description;
@@ -115,13 +115,13 @@ public class CategoryItemsCustomAdapter extends RecyclerView.Adapter<ShopProduct
             });
         }
 
-        void insertInBackground(Cart dish) {
+        void insertInBackground(Cart cart) {
             ExecutorService executor = Executors.newSingleThreadExecutor();
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
                     // Insert into the database
-                    CartFragment.db.cartdao().insertAll(dish);
+                    MainActivity.cartDatabase.cartdao().insertAll(cart);
 
                     // Ensure UI updates on the main thread
                     if (context != null) {

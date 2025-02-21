@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.R;
 import com.example.mobileproject.datacart.Cart;
 
@@ -87,7 +88,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
 
                         DeleteAlertDialog dialog = new DeleteAlertDialog(carts.get(position));
-                        dialog.show(fragment.getChildFragmentManager(), "DeleteDialog");
+                        dialog.show(((MainActivity)itemView.getContext()).getSupportFragmentManager(), "DeleteDialog");
+
                     }
                 }
             });
