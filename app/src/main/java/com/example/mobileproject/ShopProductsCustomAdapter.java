@@ -94,10 +94,10 @@ public class ShopProductsCustomAdapter extends RecyclerView.Adapter<ShopProducts
             productDesc = (TextView) view.findViewById(R.id.productDescription);
             productImage = (ImageView) view.findViewById(R.id.productImage);
             productPrice = (TextView) view.findViewById(R.id.productPrice);
-                view.setOnClickListener(new View.OnClickListener() {
+            view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(v.getContext(), productName.getText().toString(), Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(v.getContext(), productName.getText().toString(), Toast.LENGTH_SHORT).show();
                     try {
                         int product_id = productData.getInt("product_id");
                         int category_id = productData.getInt("category_id");
@@ -127,13 +127,13 @@ public class ShopProductsCustomAdapter extends RecyclerView.Adapter<ShopProducts
             });
         }
 
-        void insertInBackground(Cart dish) {
+        void insertInBackground(Cart cart) {
             ExecutorService executor = Executors.newSingleThreadExecutor();
             executor.execute(new Runnable() {
                 @Override
                 public void run() {
                     // Insert into the database
-                    CartFragment.db.cartdao().insertAll(dish);
+                    MainActivity.cartDatabase.cartdao().insertAll(cart);
 
                     // Ensure UI updates on the main thread
                     if (context != null) {

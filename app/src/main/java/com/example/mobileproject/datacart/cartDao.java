@@ -11,11 +11,11 @@ import java.util.List;
 
 @Dao
 public interface cartDao {
-@Query("SELECT * FROM cart")
+    @Query("SELECT * FROM cart")
     LiveData<List<Cart>> getallcartitems();
-@Insert
-     void insertAll( Cart ... cart);
-@Delete
+    @Insert
+    void insertAll( Cart ... cart);
+    @Delete
     void deletefrom( Cart cart);
 
 

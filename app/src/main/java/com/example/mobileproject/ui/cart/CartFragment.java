@@ -1,5 +1,7 @@
 package com.example.mobileproject.ui.cart;
 
+import static com.example.mobileproject.MainActivity.cartDatabase;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
+import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.databinding.FragmentCartBinding;
 import com.example.mobileproject.datacart.AppDatabase;
 import com.example.mobileproject.datacart.Cart;
@@ -25,7 +28,7 @@ public class CartFragment extends Fragment {
     private FragmentCartBinding binding;
     RecyclerView v;
     TextView totalprice;
-    public static AppDatabase db;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,8 +40,8 @@ public class CartFragment extends Fragment {
 
         v=binding.cartRecycler;
         totalprice=binding.gTotalprice;
-        db= Room.databaseBuilder(getContext(),AppDatabase.class,"cart_db").build();
-        db.cartdao().getallcartitems().observe(getViewLifecycleOwner(), new Observer<List<Cart>>() {
+
+        cartDatabase.cartdao().getallcartitems().observe((MainActivity)getContext(), new Observer<List<Cart>>() {
             @Override
             public void onChanged(List<Cart> carts) {
                 CustomAdapter c = new CustomAdapter(carts, CartFragment.this);
@@ -47,10 +50,20 @@ public class CartFragment extends Fragment {
 
             }
         });
+//        cartDatabase.cartdao().getTotalPrice().observe(getViewLifecycleOwner(), total -> {
+//            if (total != null) {
+//                // Format to 2 decimal places
+//                String formattedTotal = String.format("Total Price: $%.2f", total);
+//                totalprice.setText(formattedTotal);
+//            } else {
+//                totalprice.setText("Total Price: $0.00"); // Handle empty cart
+//            }
+//        });
 
 
         return root;
     }
+
 
     @Override
     public void onDestroyView() {

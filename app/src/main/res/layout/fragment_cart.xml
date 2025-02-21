@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/screen_background"
+
     tools:context=".ui.cart.CartFragment">
 
     <!-- Image -->
@@ -51,7 +51,7 @@
         android:backgroundTint="@color/buy_color"
         android:gravity="center"
         android:text="BUY NOW"
-
+        android:onClick="buynowhandler"
         android:textSize="27sp"
         app:cornerRadius="25dp"
         app:rippleColor="@color/green_700"

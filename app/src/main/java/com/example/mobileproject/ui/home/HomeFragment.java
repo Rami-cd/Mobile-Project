@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.android.volley.DefaultRetryPolicy;
@@ -43,12 +44,14 @@ import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
+    SwipeRefreshLayout swipeRefreshLayout;
     private FragmentHomeBinding binding;
     private ViewPager2 viewPager;
     private ImageAdapter imageAdapter;
     private DotsIndicator dotsIndicator;
     private RecyclerView recyclerView;
     String serverIp = BuildConfig.SERVER_IP;
+
     int TIMEOUT_MS = 10000;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -64,6 +67,7 @@ public class HomeFragment extends Fragment {
         dotsIndicator = binding.dotsIndicator;
 
         recyclerView = binding.homeRecView;
+        swipeRefreshLayout = binding.refreshHomeLayout;
 
         // Image resources for the carousel
         List<Integer> images = Arrays.asList(
@@ -79,24 +83,33 @@ public class HomeFragment extends Fragment {
         // Attach the DotsIndicator to ViewPager2 using setViewPager2
         dotsIndicator.setViewPager2(viewPager);
 
+        fetchData();
+
+        // Reload data when user swipes
+        swipeRefreshLayout.setOnRefreshListener(this::fetchData);
+
+        return root;
+    }
+
+    public void fetchData() {
         String url = "http://"+serverIp+"/storage_bucket/get_all_shops.php";
         RequestQueue queue = Volley.newRequestQueue(requireContext());
 
-            JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
-            new Response.Listener<JSONArray>() {
-                @Override
-                public void onResponse(JSONArray response) {
-                    HomeShopsCustomAdapter adapter = new HomeShopsCustomAdapter(getContext(), response);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                    recyclerView.setAdapter(adapter);
-                }
-            },
-            new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-                    Log.e("Volley", error.toString());
-                }
-            });
+        JsonArrayRequest request = new JsonArrayRequest(Request.Method.GET, url, null,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        HomeShopsCustomAdapter adapter = new HomeShopsCustomAdapter(getContext(), response);
+                        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+                        recyclerView.setAdapter(adapter);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Volley", error.toString());
+                    }
+                });
 
         request.setRetryPolicy(new DefaultRetryPolicy(
                 TIMEOUT_MS,
@@ -104,7 +117,6 @@ public class HomeFragment extends Fragment {
                 DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 
         queue.add(request);
-        return root;
     }
 
     @Override

@@ -17,7 +17,7 @@ android {
 
         android.buildFeatures.buildConfig = true
 
-        buildConfigField("String", "SERVER_IP", "\"192.168.10.162\"");
+        buildConfigField("String", "SERVER_IP", "\"192.168.0.103\"");
 
     }
 
@@ -73,4 +73,5 @@ dependencies {
     implementation("androidx.room:room-rxjava3:$room_version")
     implementation("androidx.room:room-guava:$room_version")
     testImplementation("androidx.room:room-testing:$room_version")
+    implementation ("com.google.android.material:material:1.9.0")
 }

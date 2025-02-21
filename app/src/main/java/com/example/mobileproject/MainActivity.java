@@ -11,6 +11,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.mobileproject.datacart.AppDatabase;
 import com.example.mobileproject.ui.search.repository.Category;
 import com.example.mobileproject.ui.search.repository.CategoryDataBase;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     AppBarConfiguration appBarConfiguration;
     public static CategoryDataBase categoryDataBase;
+    public static AppDatabase cartDatabase;
     String serverIp = BuildConfig.SERVER_IP;
     int TIMEOUT_MS = 10000;
 
@@ -49,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         com.example.mobileproject.databinding.ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        cartDatabase = Room.databaseBuilder(this,AppDatabase.class,"cart_db").build();
 
         // the action bar
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);

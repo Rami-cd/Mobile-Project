@@ -1,6 +1,6 @@
 package com.example.mobileproject.ui.cart;
 
-import static com.example.mobileproject.ui.cart.CartFragment.db;
+
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
+import com.example.mobileproject.MainActivity;
 import com.example.mobileproject.datacart.Cart;
 
 import java.util.concurrent.ExecutorService;
@@ -35,8 +36,10 @@ public class DeleteAlertDialog extends DialogFragment {
                 ExecutorService ex= Executors.newSingleThreadExecutor();
                 ex.execute(new Runnable() {
                     @Override
+
                     public void run() {
-                        db.cartdao().deletefrom(cart);
+                        //i put mainactivity.db
+                        MainActivity.cartDatabase.cartdao().deletefrom(cart);
                     }
                 });
             }
